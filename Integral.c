@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+//#include <math.h>
 
 #define denominator 4.0
 
@@ -23,13 +23,13 @@ int main(void)
 
 	dx = 0.01;
 	n = ( b - a ) / dx;
-	for( i = 0; i < n; i++ )//‹æ•ª‹Ï–@
+	for( i = 0; i < n; i++ )//åŒºåˆ†æ±‚ç©æ³•
 	{
 		x0 = a + ( i * dx );
 		y0 = f( x0 );
 		K = K + y0 * dx;
     	}
-	for( i = 0; i < n; i++ )//‘äŒ`–@
+	for( i = 0; i < n; i++ )//å°å½¢æ³•
 	{
 		x0 = a + i * dx;
 		y0 = f( x0 );
@@ -38,7 +38,7 @@ int main(void)
 		T = T + ( y0 + y1 ) / 2.0 * dx;
 	}
 	n = ( b - a ) / dx / 2.0;
-	for(i=1; i<n+1; i++)//ƒVƒ“ƒvƒ\ƒ“
+	for(i=1; i<n+1; i++)//ã‚·ãƒ³ãƒ—ã‚½ãƒ³
 	{
 		x0 = a+  ( 2 * i - 2 ) * dx;
 		y0 = f(x0);
@@ -47,17 +47,17 @@ int main(void)
 		y2 = f( x2 );
 		S = S + dx/3.0 * ( y0 + 4.0 * y1 + y2 );
 	}
-	printf(" ^’l      =%14.10f\n",R);
-	printf(" ‹æ•ª‹Ï–@=%14.10f\n",K);
-	printf(" ‘äŒ`–@    =%14.10f\n",T);
-	printf(" ƒVƒ“ƒvƒ\ƒ“=%14.10f\n",S);
+	printf(" çœŸå€¤      =%14.10f\n",R);
+	printf(" åŒºåˆ†æ±‚ç©æ³•=%14.10f\n",K);
+	printf(" å°å½¢æ³•    =%14.10f\n",T);
+	printf(" ã‚·ãƒ³ãƒ—ã‚½ãƒ³=%14.10f\n",S);
 	
 	fprintf(fp, "a= %f\n",a);
 	fprintf(fp, "b= %f\n",b);
-	fprintf(fp, "^’l        =%14.10f\n",R);
-	fprintf(fp, "‹æ•ª‹Ï–@  =%14.10f\n",K);
-	fprintf(fp, "‘äŒ`–@      =%14.10f\n",T);
-	fprintf(fp, "ƒVƒ“ƒvƒ\ƒ“  =%14.10f\n",S);
+	fprintf(fp, "çœŸå€¤        =%14.10f\n",R);
+	fprintf(fp, "åŒºåˆ†æ±‚ç©æ³•  =%14.10f\n",K);
+	fprintf(fp, "å°å½¢æ³•      =%14.10f\n",T);
+	fprintf(fp, "ã‚·ãƒ³ãƒ—ã‚½ãƒ³  =%14.10f\n",S);
 	fclose(fp);
 	
 	return 0;    
